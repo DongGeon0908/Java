@@ -1,12 +1,11 @@
 # 📋Java Study📋
-
 > Java 복습 및 정리
 
 <br>
 
 ### ©CopyRight
-
 > Donggeon Kim
+
 > Department of Computer Engineering, Hanshin University
 
 <br>
