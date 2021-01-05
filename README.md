@@ -12,8 +12,8 @@
 <br>
 
 ### 📒Contents
-> [2021 01 04](https://github.com/DongGeon0908/Java/tree/master/2021-01-04)
-
+> [2021-01-04](https://github.com/DongGeon0908/Java/tree/master/2021-01-04)
+> [2021-01-05](https://github.com/DongGeon0908/Java/tree/master/2021-01-05)
 
 <br>
 
