@@ -81,3 +81,21 @@
 	+ 참조를 잃은 `String` 객체는 `garbage collector`를 통해 메모리에서 자동 제거
 	+ 초기값으로 `null`값 대입 가능
 	+ [문자열 비교](https://github.com/DongGeon0908/Java/blob/master/2021-01-12/src/StringEqualsExample.java)
+
+- 배열
+	+ 같은 타입의 데이터를 연속된 공간에 나열
+	+ 각 데이터에 `index`를 부여해 놓은 자료구조
+	+ 같은 타입의 데이터만 저장
+	+ 선언과 동시에 저장할 수 있는 데이터 타입 결정
+	+ 다른 타입의 값을 저장하려고 하면 `type mismatch` 컴파일 오류 발생
+	+ 한번 생성된 배열은 길이 수정 불가
+	+ 힙 영역에 생성되고 배열 변수는 힙 영역의 배열 객체를 참조
+	+ 참조할 배열 객체가 없다면 배열 변수는 `null` 값으로 초기화 가능
+	+ 배열 변수가 `null` 값을 가진 상태에서 사용한다면 `NullPointerException` 발생
+	+ [값 목록으로 배열 생성](https://github.com/DongGeon0908/Java/blob/master/2021-01-12/src/ArrayCreateByValueListExample1.java)
+	+ 배열 변수를 선언한 이후에 중괄호를 통해 배열 생성은 허용하지 않음
+		* `new`연산자를 통해 생성 가능
+	```
+	String[] names = null;
+	names = new String[] {"김동건", "김동건", "김동건"};
+	```
