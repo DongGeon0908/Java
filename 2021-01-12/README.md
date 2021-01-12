@@ -80,4 +80,4 @@
 		* `true` or `false` 반환
 	+ 참조를 잃은 `String` 객체는 `garbage collector`를 통해 메모리에서 자동 제거
 	+ 초기값으로 `null`값 대입 가능
-	+ [문자열 비교]()
+	+ [문자열 비교](https://github.com/DongGeon0908/Java/blob/master/2021-01-12/src/StringEqualsExample.java)
