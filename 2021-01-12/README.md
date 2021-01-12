@@ -1,4 +1,4 @@
-# 📋2021-01-11📋
+# 📋2021-01-12📋
 > 참조 타입
 
 <br>
@@ -99,3 +99,5 @@
 	String[] names = null;
 	names = new String[] {"김동건", "김동건", "김동건"};
 	```
+	+ [값의 리스트로 배열 생성](https://github.com/DongGeon0908/Java/blob/master/2021-01-12/src/ArrayCreateByValueListExample2.java)
+	
