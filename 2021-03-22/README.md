@@ -37,3 +37,31 @@
     + `requireNonNull(T obj, String message)`
     + `requireNonNull(T obj, Supplier<String> msgSupplier)`
 
+- 객체 문자 벙보 `toString()`
+    + 객체의 문자 정보를 리턴
+    + `toString(Object o)`
+        * 첫 번째 매개값이 `not null`이면 `toString()`으로 얻은 값을 리턴
+        * `null`이면 `null`
+    + `toString(Object o, String nullDefault)`
+        * 매개값인 `nullDefault`를 리턴
+
+- `java.lang` 패키지에 속하는 `System` 클래스를 이용하면 운영체제의 일부 기능을 이용할 수 있음
+    + 프로그램 종료
+    + 키보드로부터 입력
+    + 모니터로 출력
+    + 메모리 정리
+    + 현재 시간 읽기
+    + 시스템 프로퍼티 읽기
+    + 환경 변수 읽기
+    + `System` 클래스의 모든 필드와 메소드는 정적 필드와 정적 메소드로 구성
+
+- 프로그램 종료
+    + 강제적으로 `JVM` 종료
+    + `System` 클래스의 `exit()` 메소드를 호출
+    + `exit()`
+        * 현재 실행하고 있는 프로세스를 강제 종료시키는 역할
+        * `System.exit(0)`
+    + 보안 관리자를 직접 설정해서 종료 상태값을 확인
+        * `System.exit()`가 실행되면 보안관리자의 `checkExit()` 메소드가 자동 호출
+        * 종료 상태값을 조사해서 특정 값이 입력되지 않으면 `SecurityException`을 발생시켜 `System.exit()`를 호출한 곳에서 예외 처리를 할 수 있도록 해줌
+        * `checkExit()`가 정상적으로 실행되면 `JVM`은 종료
