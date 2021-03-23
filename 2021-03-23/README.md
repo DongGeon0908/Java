@@ -33,3 +33,32 @@
     ```
     String value = System.getenv("JAVA_HOME");
     ```
+
+- `Class` 클래스
+    + 클래스와 인터페이스의 메타 데이터를 관리
+        * 이름, 생성자 정보, 필드 정보, 메소드 정보 등
+    + `getClass()`
+        * 해당 클래스로 객체를 생성했을 때 사용 가능
+        * 객체를 생성하기 전에 직접 `Class` 객체 얻을 수 있음
+    + `forName()`
+        * 클래스 전체 이름을 매개값으로 받고 `Class` 객체를 리턴
+        * 매개값으로 주어진 클래스를 찾지 못하면 `ClassNotFoundException` 예외 발생
+    ```
+    try{
+        Class clazz = Class.forName(String className);
+    } catch (classNotFoundException e){}
+    ```
+
+- 리플렉션 `Reflection`
+    + 클래스의 생성자, 필드, 메소드 정보를 확인
+        * `getDeclaredConstructors()` -> `Constructor` 배열 return
+        * `getDeclaredFields()` -> `Field` 배열 return
+        * `getDeclaredMethods()` -> `Method` 배열 return
+
+- 동적 객체 생성 `newInstance()`
+    + `Class`객체를 이용해 `new`연산자 없이 동적으로 객체 생성 가능
+    + 기본 생성자를 호출해서 객체를 생성하기 때문에 반드시 클래스에 기본 생성자 필요
+    + `InstantiationException`
+        * 해당 클래스가 추상 클래스이거나 인터페이스일 경우에 발생
+    + `IllegalAccessException`
+        * 클래스나 생성자가 접근 제한자로 인해 접근할 수 없을 경우에 발생
