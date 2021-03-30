@@ -181,3 +181,60 @@ public class Member implements Comparable<Member> {
 - 배열에서 값이 위치한 index 찾기
     + 먼저 오름차순으로 배열 정렬후 찾기 진행!!
 `int index = Arrays.binarySearch(배열명, 찾을데이터);`
+
+- `Wrapper Class`
+    + 기본 타입의 값을 갖는 객체를 생성할 수 있음
+    + 기본 타입의 값을 내부에 두고 포장
+        * 포장하고 있는 기본 타입 값은 외부에서 변경할 수 없음
+            + 변경하기 위해서는 새로운 포장 객체를 만들어야 함
+    + `java.lang`에 속함
+    + `Boxing`
+        * 기본 타입의 값을 포장 객체로 만드는 과정
+        * `valueOf()`
+        * 자동 박싱
+            + 포장 클래스 타입에 기본값이 대입될 경우
+    + `Unboxing`
+        * 포장 객체에서 기본 타입의 값을 얻어내는 과정
+        * `Value()`
+        * 자동 언박싱
+            + 기본 타입에 포장 객체가 대입될 경우
+    + 문자열을 기본 타입 값으로 변환할때 자주 사용
+        * `parse+기본타입`
+    + 포장 값 비교
+        * `equals()`
+    
+- `Math class`
+    + `abs()` -> 절대값
+    + `ceil()` -> 올림값
+    + `floor()` -> 내림값
+    + `max()` -> 최대값
+    + `min()` -> 최소값
+    + `random()` -> 랜덤값
+    + `rint()` -> 가까운 정수의 실수값
+    + `round()` -> 반올림값
+
+- `Random class`
+    + 난수를 얻어내기 위해 다양한 메소드를 제공
+    + `Math.random()`
+    + `Math.random(long seed)`
+        * 난수를 만드는 알고리즘에 사용되는 값인 종자값을 적용 가능
+
+- `Date class`
+    + 날짜를 표현하는 클래스
+    + 객체 간에 날짜 정보를 주고 받을 때 주로 사용
+```
+Date now = new Date();
+String time = now.toString();
+System.out.println(time);
+```
+
+- `Calendar class`
+    + 달력을 표현한 클래스
+    + 추상 클래스
+    + `getInstance()` 메소드를 이용해서 현재 운영체제에 설정되어 있는 시간대를 기준으로 한 `Calendar` 하위 객체를 얻을 수 있음 
+        * `Calendar now = Calendar.getInstance();`
+    + 다른 시간대에 해당하는 날짜와 시간을 출력
+    ```
+    TimeZone timeZone = TimeZone.getTimeZone("America/Los_Angeles");
+    Calendar now = Calendar.getInstance(timeZone);
+    ```
