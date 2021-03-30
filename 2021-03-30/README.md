@@ -113,3 +113,71 @@ String str = data.trim();
         * `valueOf(long l)`
         * `valueOf(double d)`
         * `valueOf(float f)`
+
+- `split()`
+    + `String`에 속함
+    + 정규 표현식으로 구분
+```
+String[] data = tmp.split("&|,|-");
+```
+
+- `StringTokenizer`
+    + 문자로 구분
+    + `java.util`에 속함
+
+- 문자열을 결합하는 `+` 연산자를 많이 사용하면 할수록 그만큼 `String` 객체의 수가 늘어나서 프로그램의 성능이 느려짐
+    + 내부 버퍼에 문자열을 저장해 두고, 그 안에서 추가, 수정, 삭제 작업을 진행하는 클래스 사용
+    + 해당 클래스는 새로운 문자열을 만들지 않음
+        * `StringBuffer`
+            + 멀티 스레드 환경에서 사용할 수 있도록 동기화가 적용되어 있어 스레드에 안전
+        * `StringBuilder`
+            + 단일 스레드 환경에서만 사용하도록 설계
+            + 초기 버퍼의 크기를 유동적으로 바꿀 수 있음
+
+- 정규 표현식   
+    + 문자 또는 숫자 기호와 반복 기호가 결합된 문자열
+        * `[]` -> 한 개의 문자
+        * `\d` -> 한 개의 숫자
+        * `\s` -> 공백
+        * `\w` -> 한 개의 알파벳 또는 한 개의 숫자
+        * `?` -> 없음 또는 한 개
+        * `*` -> 없음 또는 한 개 이상
+        * `+` -> 한 개 이상
+        * `{n}` -> 정확히 n개
+        * `{n.}` -> 최소한 n개
+        * `{n.m}` -> n개에서부터 m개까지
+        * `()` -> 그룹핑
+    + 정규 표현식으로 문자열 검증
+        * `boolean result = Pattern.matches("정규식", "검증할 문자열")`
+
+- `Arrays`
+    + 배열 조작 기능
+        * 배열의 복사 -> `copyOf() copyOfRange()`
+        * 항목 정렬 -> `sort()`
+        * 항목 검색 -> `equals() deepEquals()`
+
+- Arrays 정렬
+    + `Arrays.sort()` 메소드의 매개값으로 지정해주면 자동으로 오름차순 정렬
+        * 사용자 정의 클래스 타입일 경우, 클래스가 `Comparable` 인터페이스를 구현하고 있어야 정렬
+    + `compareTo()`
+        * 오름차순일 때 자신이 매개값 보다 낮을 경우 음수, 같은경우 0, 높을 경우 양수
+        * 내림차순일 때 자신이 매개값 보다 낮을 경우 양수, 같은경우 0, 높을 경우 음수
+```
+public class Member implements Comparable<Member> {
+	String name;
+
+	Member(String name) {
+		this.name = name;
+	}
+	
+	@Override
+	public int compareTo(Member o) {
+		return name.compareTo(o.name);
+	}
+
+}
+```
+
+- 배열에서 값이 위치한 index 찾기
+    + 먼저 오름차순으로 배열 정렬후 찾기 진행!!
+`int index = Arrays.binarySearch(배열명, 찾을데이터);`
