@@ -69,7 +69,7 @@
 
 > [2021-03-31](https://github.com/DongGeon0908/Java/tree/master/2021-03-31)
 
-> [2021-04-02](https://github.com/DongGeon0908/Java/tree/master/2021-04-02)
+> [멀티 스레드](https://github.com/DongGeon0908/Java/tree/master/%EB%A9%80%ED%8B%B0%20%EC%8A%A4%EB%A0%88%EB%93%9C)
 
 
 <br>
