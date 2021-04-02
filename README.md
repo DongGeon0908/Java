@@ -10,6 +10,10 @@
 
 <br>
 
+날짜별로 정리하는 것보다 단원 별로 정리하겠음!
+
+
+
 ### 📒Contents
 > [2021-01-04](https://github.com/DongGeon0908/Java/tree/master/2021-01-04)
 
@@ -64,6 +68,8 @@
 > [2021-03-30](https://github.com/DongGeon0908/Java/tree/master/2021-03-30)
 
 > [2021-03-31](https://github.com/DongGeon0908/Java/tree/master/2021-03-31)
+
+> [2021-04-02](https://github.com/DongGeon0908/Java/tree/master/2021-04-02)
 
 
 <br>
