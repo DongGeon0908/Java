@@ -1,0 +1,2 @@
+Java is an object-oriented programming language developed by Sun Microsystems' James Gosling and other researchers.
+자바는 1995년에 발표되었다.
