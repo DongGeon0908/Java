@@ -1,8 +1,8 @@
-package Thread;
+package chapter12;
 
 import java.awt.Toolkit;
 
-public class BeepPrintExample4 {
+public class BeepPrintExample2_3 {
 	public static void main(String[] args) {
 		Thread thread = new Thread(() -> {
 			Toolkit toolkit = Toolkit.getDefaultToolkit();

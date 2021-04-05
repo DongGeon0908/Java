@@ -1,8 +1,9 @@
 package chapter12;
 
-public class BeepPrintExample3 {
+public class BeepPrintExample2_2 {
 	public static void main(String[] args) {
-		Thread thread = new BeepThread();
+		Runnable beepTask = new BeepTask();
+		Thread thread = new Thread(beepTask);
 		thread.start();
 		
 		for(int i=0; i <5; i++) {
@@ -12,7 +13,6 @@ public class BeepPrintExample3 {
 			} catch(Exception e) {
 				
 			}
-		
 		}
 	}
 }
