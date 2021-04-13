@@ -1,4 +1,4 @@
-package chapter12;
+
 
 public class PriorityExample {
 	public static void main(String[] args) {

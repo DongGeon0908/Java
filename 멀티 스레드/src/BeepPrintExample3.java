@@ -1,4 +1,4 @@
-package chapter12;
+
 
 public class BeepPrintExample3 {
 	public static void main(String[] args) {

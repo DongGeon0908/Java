@@ -1,4 +1,4 @@
-package chapter12;
+
 
 public class ThreadA extends Thread {
 	public ThreadA() {

@@ -1,4 +1,4 @@
-package chapter12;
+
 
 public class ThreadNameExample {
 	public static void main(String[] args) {
