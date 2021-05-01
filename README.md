@@ -24,7 +24,7 @@
 
 > 하위 클래스까지만 강의로 배웠는데, 인터페이스, 예외 처리, 패키지, 제네릭 클래스, 컬렉션 클래스 공부!!
 
-### 📒Contents
+### 📒 JAVA BASIC
 > [2021-01-04](https://github.com/DongGeon0908/Java/tree/master/2021-01-04)
 
 > [2021-01-05](https://github.com/DongGeon0908/Java/tree/master/2021-01-05)
@@ -81,8 +81,11 @@
 
 > [멀티 스레드](https://github.com/DongGeon0908/Java/tree/master/%EB%A9%80%ED%8B%B0%20%EC%8A%A4%EB%A0%88%EB%93%9C)
 
+<br />
 
-<br>
+### 📒 JAVA Pattern
+
+> [Strategy Pattern](https://github.com/DongGeon0908/Java/tree/master/Strategy%20Pattern)
 
 ### 🔧Environment
   - jdk-15.0.1
