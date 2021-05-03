@@ -10,4 +10,8 @@ public class ThreadA extends Thread {
 			System.out.println(getName() + "가 출력할 내용");
 		}
 	}
+	
+	public boolean stop = false;
+	public boolean work = true;
+	
 }
