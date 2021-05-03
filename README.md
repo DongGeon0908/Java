@@ -85,9 +85,14 @@
 
 ### 📒 JAVA Pattern
 
-> [Strategy Pattern](https://github.com/DongGeon0908/Java/tree/master/Strategy%20Pattern)
+> [`Strategy Pattern`](https://github.com/DongGeon0908/Java/tree/master/Strategy%20Pattern)
+
+> [`Adapter Pattern`](https://github.com/DongGeon0908/Java/tree/master/Adapter%20Pattern)
+
+> [`Template Method Patter`](https://github.com/DongGeon0908/Java/tree/master/Template%20Method%20Pattern)
 
 ### 🔧Environment
+
   - jdk-15.0.1
   - eclipse 2020-12
 
