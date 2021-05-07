@@ -227,3 +227,52 @@
       - `run()` 메소드가 정상적으로 종료되도록 유도하는 것
     - `interrupt()`
       - 스레드가 일시 정지 상태에 있을 때 `InterruptedException` 예외를 발생시키는 역할
+  
+- 데몬 스레드 `daemon`
+
+    - 주 스레드의 작업을 돕는 보조적인 역할을 수행하는 스레드
+    - 주 스레드가 종료되면 자동적으로 데몬 스레드도 종료됨
+
+- 스레드 그룹 `ThreadGroup`
+
+    - 관련된 스레드를 묶어서 관리할 목적으로 이용
+    - 스레드는 반드시 하나의 스레드 그룹에 포함됨
+        - 명시적으로 스레드 그룹에 포함시키지 않으면 기본적으로 자신을 생성한 스레드와 같은 스레드 그룹에 속함
+
+    ```
+    ThreadGroup tg = new ThreadGroup(String name);
+    ThreadGroup tg = new ThreadGroup(ThreadGroup parent, String name);
+    ```
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
