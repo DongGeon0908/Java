@@ -89,7 +89,9 @@
 
 > [`Adapter Pattern`](https://github.com/DongGeon0908/Java/tree/master/Adapter%20Pattern)
 
-> [`Template Method Patter`](https://github.com/DongGeon0908/Java/tree/master/Template%20Method%20Pattern)
+> [`Template Method Pattern`](https://github.com/DongGeon0908/Java/tree/master/Template%20Method%20Pattern)
+
+> [`Factory Method Pattern`](https://github.com/DongGeon0908/Java/tree/master/Factory%20Method%20Pattern)
 
 ### 🔧Environment
 
