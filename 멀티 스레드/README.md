@@ -244,9 +244,148 @@
     ThreadGroup tg = new ThreadGroup(ThreadGroup parent, String name);
     ```
 
+- 스레드 그룹의 일괄 `interrupt()`
+
+    - 그룹 내에 포함된 모든 스레드들을 일괄 `interrupt`할 수 있음
+    - 스레드 그룹의 `interrupy()` 메소드는 포함된 모든 스레드의 `interrupt()` 메소드를 내부적으로 호출해줌
+    - 스레드를 안정적으로 종료시킬 수 있음
     
+    ```
+    public class WorkThread extends Thread {
+    	public WorkThread(ThreadGroup threadGroup, String threadName){
+    		super(threadGroup, threadName);
+    	}
+    	
+    	@Override
+    	public void run(){
+    		while(true){
+    			try{
+    				Thread.sleep(1000);
+    			} catch (InterruptedException e){
+    				System.out.println(getName() + " interrupted");
+    				break;
+    			}
+    		}
+    		System.out.println(getName() + " 종료됨 ");
+    	}
+    }
+    ```
 
 
+
+- 스레드 풀 `ThreadPool`
+  - 갑작스런 병렬 작업의 폭증으로 인한 스레드의 폭증을 막음
+  - 작업 처리에 사용되는 스레드를 제한된 개수만큼 정해 놓고 작업 큐에 들어오는 작업들을 하나씩 스레드가 맡아서 처리
+  - 작업 처리 요청이 폭증되어도 스레드의 전체 개수가 늘어나지 않으므로 애플리케이션의 성능이 급격히 저하되지 않음
+
+- 초기 스레드 수
+
+  - `ExecutorService` 객체가 생성될 때 기본적으로 생성되는 스레드 수
+
+- 코어 스레드 수
+
+  - 스레드 수가 증가된 후 사용되지 않는 스레드를 스레드풀에서 제거할 때 최소한 유지해야 할 스레드 수
+
+- 최대 스레드 수
+
+  - 스레드풀에서 관리하는 최대 스레드 수
+
+- `shutdown()`
+
+  - 남아있는 작업을 마무리하고 스레드풀을 종료
+
+- `shutdownNow()`
+
+  - 남아있는 작업과는 상관없이 강제로 종료
+
+- 작업 생성
+
+  - `Runnable`
+
+    ```
+    Runnable task = new Runnable() {
+    	@Override
+    	public void run() {
+    		
+    	}
+    }
+    ```
+
+  - `Collable`
+
+    ```
+    Callable<T> task = new Callable<T>(){
+    	@Override
+    	public T call() throws Exception {
+    		return T;
+    	}
+    }
+    ```
+
+- 작업 처리 요청
+
+  - `ExecutorService`의 작업 큐에 `Runnable` 또는 `Callable` 객체를 넣는 행위
+  - `execute()`
+    - 작업 처리 결과를 받지 못함
+    - 작업 처리 도중 예외가 발생하면 스레드가 종료되고 해당 스레드는 스레드풀에서 제거
+      - 스레드풀은 다른 작업 처리를 위해 새로운 스레드를 생성
+  - `submit()`
+    - 작업 처리 결과를 받을 수 있도록 `Future`를 리턴
+      - 작업 처리 도중 예외가 발생하더라도 스레드는 종료되지 않고, 다음 작업을 위해 재사용
+      - 스레드의 생성 오버헤더를 줄이기 위해서 `submit()`을 사용하는 것이 좋음
+
+- 블로킹 방식의 작업 완료 통보
+
+  - `Future`
+    - 지연 완료 객체
+    - 작업을 처리하는 스레드가 작업을 완료하기 전까지는 `get()` 메소드가 블로킹되므로 다른 코드를 실행할 수 없음
+
+- 리턴값이 없는 작업 완료 통보
+
+  - `Runnable` 객체로 생성하면 됨
+  - `Future` 객체를 리턴하는 이유
+    - 스레드가 작업처리를 정상적으로 완료했는지, 아니면 작업 처리 도중에 예외가 발생했는지 확인하기 위함
+
+- 리턴값이 있는 작업 완료 통보
+
+  - 작업 객체를 `Callable`로 생성
+
+    - `call()`의 반환값에 리턴타입을 설정해야함!!
+
+  - 작업 처리 결과를 외부 객체에 저장
+
+    - 스레드가 작업 처리를 완료하고 외부 `Result` 객체에 작업 결과를 저장하면, 애플리케이션이 `Result` 객체를 사용해서 어떤 작업을 진행할 수 있음
+
+      ```
+      class Task implements Runnable {
+      	Result result;
+      	Task(Result result) {
+      		this.result = result;
+      	}
+      	@Override
+      	public void run() {
+      	
+      	}
+      }
+      ```
+
+  - 작업 완료 순으로 통보
+
+    - 스레드풀에서 이용할 필요가 없다면 작업 처리가 완료된 것부터 결과를 얻어 이용!!
+
+    - `CompletionService`를 이용
+
+      ```
+      CompletionService<V> completionService = new ExecutorCompletionService<V>(executorService);
+      ```
+
+- 콜백 방식의 작업 완료 통보
+
+  - 콜백?
+    - 애플리케이션이 스레드에게 작업 처리를 요청한 후, 스레드가 작업을 완료하면 특정 메소드를 자동 실행하는 기법
+    - 콜백 메소드
+      - 자동 실행되는 메소드
+    - 작업 처리를 요청한 후 결과를 기다릴 필요 없이 다른 기능을 수행할 수 있음
 
 
 
