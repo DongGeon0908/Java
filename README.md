@@ -93,6 +93,8 @@
 
 > [`Factory Method Pattern`](https://github.com/DongGeon0908/Java/tree/master/Factory%20Method%20Pattern)
 
+> [`Singletone Pattern`](https://github.com/DongGeon0908/Java/tree/master/Singletone%20Pattern)
+
 ### 🔧Environment
 
   - jdk-15.0.1
